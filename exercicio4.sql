@@ -1,5 +1,7 @@
 CREATE DATABASE `redeSocial`;
 
+USE `redeSocial`;
+
 CREATE TABLE `Usuario` (
     `id` INT PRIMARY KEY,
     `nome` VARCHAR(100),

@@ -1,5 +1,7 @@
 CREATE DATABASE `agendaContatos`;
 
+USE `agendaContatos`;
+
 CREATE TABLE `Grupo` (
     `id` INT PRIMARY KEY,
     `nome` VARCHAR(100),

@@ -1,5 +1,7 @@
 CREATE DATABASE `trabalhoAcademico`;
 
+USE `trabalhoAcademico`;
+
 CREATE TABLE `Disciplina` (
     `id` INT PRIMARY KEY,
     `nome` VARCHAR(100),

@@ -1,5 +1,7 @@
  CREATE DATABASE `empresa`;
  
+USE `empresa`;
+
  CREATE TABLE `Departamento` (
     `numero` INT PRIMARY KEY,
     `nome` VARCHAR(100)

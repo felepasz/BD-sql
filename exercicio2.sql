@@ -1,5 +1,7 @@
 CREATE DATABASE `AlbumMusical`;
 
+USE `AlbumMusical`;
+
 CREATE TABLE `Cantor` (
     `id` INT PRIMARY KEY,
     `nome` VARCHAR(100)
