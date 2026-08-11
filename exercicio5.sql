@@ -1,4 +1,4 @@
- CREATE DATABASE `empresa`
+ CREATE DATABASE `empresa`;
  
  CREATE TABLE `Departamento` (
     `numero` INT PRIMARY KEY,
@@ -12,7 +12,7 @@ CREATE TABLE `Empregado` (
     `dataNascimento` DATE,
     `salario` INT,
     `numeroDepartamento` INT,
-    FOREIGN KEY (numeroDepartamento) REFERENCES Departamento(numero)
+    FOREIGN KEY (`numeroDepartamento`) REFERENCES `Departamento`(`numero`)
 );
 
 CREATE TABLE `Dependente` (
