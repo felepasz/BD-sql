@@ -22,7 +22,7 @@ CREATE TABLE `Dependente` (
     `dataNascimento` DATE,
     `grauParentesco` VARCHAR(50),
     `rgEmpregado` INT,
-    FOREIGN KEY (rgEmpregado) REFERENCES Empregado(rg)
+    FOREIGN KEY (`rgEmpregado`) REFERENCES `Empregado`(`rg`)
 );
 
 CREATE TABLE `Endereco` (
@@ -34,15 +34,5 @@ CREATE TABLE `Endereco` (
     `bairro` VARCHAR(100),
     `complemento` VARCHAR(100),
     `numeroDepartamento` INT,
-    FOREIGN KEY (numeroDepartamento) REFERENCES Departamento(numero)
-);
-
-CREATE TABLE `Empregado` (
-    `rg` INT PRIMARY KEY,
-    `nome` VARCHAR(100),
-    `sexo` VARCHAR(20),
-    `dataNascimento` DATE,
-    `salario` INT,
-    `numeroDepartamento` INT,
-    FOREIGN KEY (numeroDepartamento) REFERENCES Departamento(numero)
+    FOREIGN KEY (`numeroDepartamento`) REFERENCES `Departamento`(`numero`)
 );
