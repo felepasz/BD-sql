@@ -1,3 +1,41 @@
+'''CREATE DATABASE `empresa`;
+USE `empresa`;
+CREATE TABLE `cliente` (
+ `cpf` CHAR(14) PRIMARY KEY,
+ `nome` VARCHAR(100) NOT NULL,
+ `telefone` BIGINT NOT NULL
+);
+CREATE TABLE `empregado` (
+ `cpf` CHAR(14) PRIMARY KEY,
+ `nome` VARCHAR(100) NOT NULL,
+ `cargo` VARCHAR(100) NOT NULL
+);
+CREATE TABLE `projeto` (
+ `codProj` INT PRIMARY KEY AUTO_INCREMENT,
+ `nome` VARCHAR(100) NOT NULL,
+ `descricao` VARCHAR(100) NOT NULL,
+ `preco` DECIMAL(10,2) NOT NULL,
+ `dtFim` DATE NOT NULL,
+ `dtEstimada` DATE NOT NULL,
+ `dtSolicitacao` DATE NOT NULL,
+ `cpfGerente` CHAR(14) NOT NULL,
+ `cpfCliente` CHAR(14) NOT NULL,
+ FOREIGN KEY (`cpfCliente`) REFERENCES `cliente`(`cpf`),
+ FOREIGN KEY (`cpfGerente`) REFERENCES `empregado`(`cpf`)
+);
+CREATE TABLE `projEmp` (
+ `codProj` INT,
+ `cpfEmpregado` CHAR(14),
+ `hrTrab` FLOAT
+);
+ALTER TABLE `projEmp` 
+ADD CONSTRAINT PRIMARY KEY (`codProj`, `cpfEmpregado`);
+ALTER TABLE `projEmp` 
+ADD CONSTRAINT FOREIGN KEY (`cpfEmpregado`) REFERENCES `empregado`(`cpf`);
+ALTER TABLE `projEmp` 
+ADD CONSTRAINT FOREIGN KEY (`codProj`) REFERENCES `projeto`(`codProj`);'''
+
+
 '''1. Insira um cliente chamado João da Silva, CPF 111.111.111-11, telefone 48991234567.'''
 
 INSERT INTO cliente (cpf, nome, telefone)
