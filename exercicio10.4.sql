@@ -100,202 +100,34 @@ INSERT INTO `Consultas` (`idAnimal_fk`, `idVeterinario_fk`, `dtConsulta`, `motiv
 (2, 1, '2025-05-05 15:30:00', 'Espirros', 'Rinotraqueíte felina', 170.00),
 (6, 3, '2025-05-15 08:30:00', 'Consulta dermatológica', 'Revisão da dermatite', 120.00);
 
-<<<<<<< HEAD
---Passo 1
-
---1
-SELECT *
-FROM Animais;
-
---2
-SELECT nome, email, cidade
-FROM Tutores;
-
---3
-SELECT nome, especialidade
-FROM Veterinarios;
-
---4
-SELECT motivo, custo
-FROM Consultas;
-
---Passo 2
-
---5
-=======
--- Passo 1
+-- SEÇÃO 1
 
 -- 1
-SELECT *
-FROM Animais;
+
+SELECT nome as 'Nome do tutor',
+cidade as 'Cidade'
+from Tutores;
 
 -- 2
-SELECT nome, email, cidade
-FROM Tutores;
+
+SELECT nome as 'Veterinário(a)',
+especialidade as 'Especialidade'
+from Veterinarios;
 
 -- 3
-SELECT nome, especialidade
-FROM Veterinarios;
+
+SELECT nome as 'Nome do animal',
+peso_kg as 'Peso (kg)'
+from Animais;
 
 -- 4
-SELECT motivo, custo
-FROM Consultas;
 
--- Passo 2
+SELECT dtConsulta as 'Data da Consulta',
+custo as 'Valor (R$)'
+from Consultas;
+
+-- SECÃO 2 
 
 -- 5
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT *
-FROM Animais
-WHERE especie = 'Gato';
 
-<<<<<<< HEAD
---6
-=======
--- 6
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT nome, peso_kg
-FROM Animais
-WHERE peso_kg > 20;
-
-<<<<<<< HEAD
---7
-=======
--- 7
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT *
-FROM Consultas
-WHERE custo = 150.00;
-
-<<<<<<< HEAD
---8
-=======
--- 8
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT nome, dtNascimento
-FROM Animais
-WHERE dtNascimento >= '2022-01-01';
-
-<<<<<<< HEAD
---9
-=======
--- 9
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT nome, raca
-FROM Animais
-WHERE raca <> 'Labrador';
-
-<<<<<<< HEAD
---Passo 3
-
---10
-=======
--- Passo 3
-
--- 10
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT *
-FROM Animais
-WHERE especie = 'Cachorro'
-AND peso_kg < 10;
-
-<<<<<<< HEAD
---11
-=======
--- 11
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT *
-FROM Consultas
-WHERE dtConsulta >= '2025-01-01'
-AND dtConsulta < '2026-01-01'
-AND custo > 180;
-
-<<<<<<< HEAD
---12
-=======
--- 12
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT *
-FROM Animais
-WHERE especie = 'Cachorro'
-OR especie = 'Gato';
-
-<<<<<<< HEAD
---13
-=======
--- 13
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT *
-FROM Tutores
-WHERE cidade = 'São Paulo'
-OR cidade = 'Rio de Janeiro';
-
-<<<<<<< HEAD
---14
-=======
--- 14
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT *
-FROM Animais
-WHERE (especie = 'Cachorro' AND peso_kg > 30)
-OR (especie = 'Gato' AND peso_kg < 5);
-
-<<<<<<< HEAD
---Passo 4
-
---15
-=======
--- Passo 4
-
--- 15
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT nome, telefone
-FROM Tutores
-WHERE nome LIKE 'A%';
-
-<<<<<<< HEAD
---16
-=======
--- 16
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT nome, raca
-FROM Animais
-WHERE raca LIKE '%Retriever%';
-
-<<<<<<< HEAD
---17
-=======
--- 17
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT nome, email, cidade
-FROM Tutores
-WHERE cidade IN ('Belo Horizonte', 'Florianópolis', 'Porto Alegre');
-
-<<<<<<< HEAD
---18
-=======
--- 18
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT Animais.nome, Consultas.custo
-FROM Animais
-JOIN Consultas
-ON Animais.idAnimal = Consultas.idAnimal_fk
-WHERE Consultas.custo BETWEEN 100 AND 200;
-
-<<<<<<< HEAD
---19
-=======
--- 19
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT *
-FROM Animais
-WHERE obs IS NULL;
-
-<<<<<<< HEAD
---20
-=======
--- 20
->>>>>>> e3d48a163ca6230e52a34cc8584a3679e3acbc36
-SELECT *
-FROM Consultas
-WHERE diagnostico IS NOT NULL;
+SELECT 
