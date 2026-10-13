@@ -51,12 +51,71 @@ INSERT INTO `produtos` (`nome`, `fabricante`, `preco`, `estoque`, `idCategoria_f
 
 -- 1
 SELECT 
-`A`.`nome` AS 'Nome do produto',
-`C`.`nome` AS 'Categoria'
-FROM `produtos` AS `A`
+A. nome AS 'Nome do produto',
+C. nome AS 'Categoria'
+FROM produtos AS A
 INNER JOIN 
- `categorias` AS `C` on `A`.`idCategoria_fk` = `C`.`idCategoria`;
+ categorias AS C on A.idCategoria_fk = C.idCategoria;
 
 -- 2
 SELECT
-    
+    A. nome AS 'Nome do produto',
+    A. preco AS 'Preço do produto',
+    C. nome AS 'Nome da categoria'
+    FROM produtos AS A
+    INNER JOIN categorias AS C ON A.idCategoria_fk = C.idCategoria
+    WHERE C.nome = 'Periféricos';
+
+-- 3
+SELECT
+A. nome AS 'Nome do produto',
+A. fabricante AS 'Fabricante do produto',
+C. nome AS 'Nome da categoria'
+FROM produtos AS A
+INNER JOIN categorias AS C ON A.idCategoria_fk = C.idCategoria
+WHERE C. nome = 'Notebooks';
+
+-- 4
+SELECT
+    A. nome AS 'Nome do produto',
+    A. preco AS 'Preço do produto',
+    C. nome AS 'Nome da categoria'
+    FROM
+    produtos AS A
+    INNER JOIN categorias AS C ON A.idCategoria_fk = C.idCategoria
+    WHERE A. preco > 2000.00;
+
+-- 5
+SELECT
+A. nome AS 'Nome do produto',
+C. nome AS 'Categoria'
+FROM produtos AS A
+LEFT JOIN categorias AS C ON A.idCategoria_fk = C.idCategoria;
+
+-- 6
+INSERT INTO produtos (nome, fabricante, preco, estoque, idCategoria_fk, dtCadastro) 
+VALUES ('Produto sem categoria', NULL, 100.00, 10, NULL, '2024-06-01');
+
+SELECT
+A. nome AS 'Nome do produto',
+C. nome AS 'Categoria'
+FROM produtos AS A
+LEFT JOIN categorias AS C ON A.idCategoria_fk = C.idCategoria
+WHERE A.idCategoria_fk IS NULL;
+
+-- 7
+SELECT
+A.nome AS 'Nome do produto',
+C.nome AS 'Categoria'
+FROM categorias AS A
+RIGHT JOIN produtos AS C ON A.idCategoria = C.idCategoria_fk;
+
+-- 8
+INSERT INTO categorias (nome) VALUES ('Drones');
+
+SELECT
+C.nome AS 'Nome categoria'
+FROM produtos AS P
+RIGHT JOIN categorias C ON P.idCategoria_fk = C.idCategoria
+WHERE P.idProduto IS NULL;
+
